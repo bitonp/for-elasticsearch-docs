@@ -19,3 +19,6 @@ Regularly upgrading Open Distro for Elasticsearch gives you access to the latest
 - Cluster restart upgrades require you to shut down all nodes, perform the upgrade, and restart the cluster.
 
   Cluster restart upgrades work between minor versions (for example, 6.5 to 6.7) and the next major version (for exemple, 6.x to 7.0). Cluster restart upgrades are simpler and faster to perform, but require downtime.
+  
+  Note: For those operating in a cloud environment, it may be best to start a new node first, configured as per above, and add         to the cluster, then remove a node. DO this for all nodes, and on teh last one, when pulled from teh cluster, just shut 
+        it down. This would help ensure you do not run out of data space for allocating shards if you are minus a node. 
